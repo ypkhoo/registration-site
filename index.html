@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"> 
+        <link rel="stylesheet" href="./registration_files/bootstrap.min.css" type="text/css">
+        <link href="./registration_files/fs-modal.min.css" rel="stylesheet">
+        <title>REGISTRATION PAGE</title>
+        <style>
+            body {
+                /* padding: 70px 0; */
+                text-align: center; 
+                font-family: GOTHAM; 
+            }
+
+            #data-screen, #PDPA-screen, #accountType-screen, #thankyou-screen, #mandatory-screen {
+                display:none; 
+            }
+
+            #main-container {
+                max-width: 660px;
+                height: 100vh; 
+                position: relative; 
+                margin: auto; 
+                padding: 50px 50px 50px; 
+            }
+
+            @font-face {
+                font-family: GOTHAM; 
+                src: url('./assets/Font/Gotham-Book.otf'); 
+            }
+
+            @font-face {
+                font-family: GOTHAMBOLD; 
+                src: url('./assets/Font/GothamBold.ttf'); 
+                font-weight: bold; 
+            }
+            
+            @font-face {
+                font-family: GOTHAMULTRA; 
+                src: url('./assets/Font/Gotham-Ultra.otf'); 
+                font-weight: ultra; 
+            }
+            
+            @font-face {
+                font-family: GOTHAMMEDIUM; 
+                src: url('./assets/Font/Gotham-Medium.otf'); 
+                font-weight: medium; 
+            }
+
+            .vertCenter {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+            }
+            
+            #PDPAModal .modal-dialog {
+                min-width: 90vw;
+                max-height: calc(100vh-100px); 
+                overflow-y: auto; 
+            }
+        </style>
+    </head>
+
+    <body style="background-image: url('./assets/BG-1@2x.png')">
+        <!-- PDPA Modal -->
+        <div class="modal fade" id="PDPAModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: #EFE5F1; color: #522E90">
+              <div class="modal-header" style="border-bottom: 0 none;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="modal-body-text"></div>
+            </div>
+          </div>
+        </div>
+        
+        
+            
+        <div id="main-container"> 
+            <section id="welcome-screen">
+                <img src="./assets/1x/Logo.png">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3 style="color: #522E90;  width:100%; font-family: GOTHAMMEDIUM" >Welcomes you to our 1<sup>st</sup> ever</h3>
+                <h1 style="color: #522E90; font-family: GOTHAMULTRA; width:100%; letter-spacing: 5px">VIRTUAL EVENT</h1>
+                <br>
+                <h1 style="color: #522E90; font-family: GOTHAMULTRA; width:100%; letter-spacing: 5px">"EVENT TAGLINE"</h1>
+                <br>
+                <h4 class="vertCenter" style="color: #FFFFFF;"><input type="image" src="./assets/1x/1. btn - click.png" id="continue-btn"/>
+                &nbsp;TO REGISTER
+                </h4>
+            </section>
+            
+            <section id="data-screen">
+                <img src="./assets/1x/Logo.png">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h6 style="color: #522E90">PLEASE FILL IN YOUR INFORMATION</h6>
+                <form>
+                    <div class="form-group">
+                    <select class="form-control" id="PrefixInput"> 
+                        <option selected>Prefix</option>
+                        <option>Mr.</option>
+                        <option>Mrs.</option>
+                        <option>Ms.</option>
+                        <option>Dr.</option>
+                        <option>Prof.</option>
+                        <option>Prof. Dr.</option>
+                        <option>Tan Sri</option>
+                        <option>Datuk</option>
+                    </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="name" class="form-control" id="NameInput" placeholder="Name (as per NRIC)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="phoneNumber" class="form-control" id="phoneNumberInput" placeholder="Mobile No.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="EmailInput" placeholder="Email Address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="address" class="form-control" id="AddressInput" placeholder="Address">
+                        <small id="AddressInput" class="form-text text-muted text-left">
+                            &nbsp;&nbsp;&nbsp;&nbsp;*Optional, for delivery of event goodies. If declined, please put "NA"
+                        </small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select class="form-control" id="SpecialtyInput"> 
+                            <option selected>Specialty</option>
+                            <option>Pediatrician</option>
+                            <option>GP</option>
+                            <option>MO</option>
+                            <option>Nutritionist</option>
+                            <option>Dietitian</option>
+                            <option>FMS</option>
+                            <option>-</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="institute" class="form-control" id="InstituteInput" placeholder="Institute">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="mmcmdaID" class="form-control" id="idInput" placeholder="MMC/MDA ID">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select class="form-control" id="HearAboutInput">
+                            <option selected>Where did you hear about this event?</option>
+                            <option>Nutrition Advisor</option>
+                            <option>MPA Website</option>
+                            <option>MDA Website</option>
+                            <option>Friend/Colleague</option>
+                            <option>Other...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group form-check text-left">
+                        <input type="checkbox" class="form-check-input" id="DisclaimerInput"> 
+                        <label class="form-check-label" for="DisclaimerInput" style="color: #FFFFFF" id="DisclaimerLabel">Checkbox for privacy notice: </label>
+                    <small id="DisclaimerText" class="form-text text-left" style="color: #FFFFFF">
+                        I have read, and fully understand and consent to the collection
+                        and processing of my Personal Data in accordance with the
+                        <a style="color: #FF0000; font-weight: bold" href="#" data-toggle="modal" data-target="#PDPAModal"><u>Personal Data and Privacy Notice here</u></a>.
+                    </small>
+                    </div>
+                    <br>
+                    <br>
+                    <input type="image" src="./assets/1x/2. btn - register.png" id="register-btn"/>
+                </form>
+            </section>
+                
+            <!-- Modal -->
+            <div class="modal fade" id="mandatoryModal" role="dialog">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="background-color: #EFE5F1;">
+                  <div class="modal-header d-block" style="border-bottom: 0 none;  margin-top: 20px;">
+                    <div class="modal-title text-center" id="modalTitle" style="color: #522E90; font-family: GOTHAMBOLD">
+                        <b>*ALL FIELDS ARE MANDATORY.</b>
+                    </div>
+                  </div>
+                  <div class="modal-body" style="color: #522E90;">
+                      <p>Please check the box with <b style="color: #FF0000">RED (X)</b>
+                      </p>
+                  </div>
+                  <div class="modal-footer d-block" style="border-top: 0 none;">
+                    <input class="text-center" type="image" src="./assets/1x/3. btn- ok.png" id="okay-btn" data-dismiss="modal"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <section id="thankyou-screen" style="color: #522E90; ">
+                <img src="./assets/1x/Logo.png">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h4>Thank you for registering</h4>
+                <br>
+                <h1 style="color: #522E90; font-family: GOTHAMULTRA; width:100%; letter-spacing: 5px">"EVENT TAGLINE"</h1>
+                <br>
+                <br>
+                <img src="./assets/1.text.png" style="width:90%">
+            </section>
+        </div>
+
+        <script src="./registration_files/jquery.min.js" type="text/javascript"></script>
+        <script src="./registration_files/popper.min.js" type="text/javascript"></script>
+        <script src="./registration_files/bootstrap.min.js" type="text/javascript"></script>
+        <script src="./registration_files/fs-modal.min.js"></script>
+        <script>
+            fetch('.assets/PDPA.txt')
+            .then(response => response.text())
+            .then((data) => {
+                document.getElementById("modal-body-text").innerHTML = data; 
+            }); 
+            
+            $("#continue-btn").click(function () {
+                $("#welcome-screen").hide(); 
+                $("#data-screen").show(); 
+            }); 
+
+            $("#back-btn").click(function () {
+                $("#PDPA-screen").hide(); 
+                $("#data-screen").show();
+            });
+
+            $('#register-btn').on('click', function(e) {
+                e.preventDefault(); 
+                var userData = {};
+                
+                if($("#PrefixInput").val() === "Prefix") {
+                  $("#PrefixInput").addClass('is-invalid'); 
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#PrefixInput").removeClass('is-invalid'); 
+                  userData.pref = $("#PrefixInput").val(); 
+                }
+                
+                if($("#NameInput").val() === "") {
+                  $("#NameInput").addClass('is-invalid'); 
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#NameInput").removeClass('is-invalid'); 
+                  userData.name = $("#NameInput").val(); 
+                }
+                
+                if($("#phoneNumberInput").val() === "") {
+                  $("#phoneNumberInput").addClass('is-invalid');
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#phoneNumberInput").removeClass('is-invalid'); 
+                  userData.phoneNumber = $("#phoneNumberInput").val();
+                }
+                
+                if($("#EmailInput").val() === "") {
+                  $("#EmailInput").addClass('is-invalid'); 
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#EmailInput").removeClass('is-invalid'); 
+                  userData.email = $("#EmailInput").val(); 
+                }
+                
+                if($("#AddressInput").val() === "") {
+                  $("#AddressInput").addClass('is-invalid'); 
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#AddressInput").removeClass('is-invalid'); 
+                  userData.address = $("#AddressInput").val(); 
+                }
+                
+                if($("#SpecialtyInput").val() === "Specialty") {
+                  $("#SpecialtyInput").addClass('is-invalid'); 
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#SpecialtyInput").removeClass('is-invalid'); 
+                  userData.specialty = $("#SpecialtyInput").val(); 
+                }
+                
+                if($("#InstituteInput").val() === "") {
+                  $("#InstituteInput").addClass('is-invalid'); 
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#InstituteInput").removeClass('is-invalid'); 
+                  userData.institute = $("#InstituteInput").val(); 
+                }
+                
+                if($("#idInput").val() === "") {
+                  $("#idInput").addClass('is-invalid'); 
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#idInput").removeClass('is-invalid'); 
+                  userData.mmcmdaID = $("#idInput").val(); 
+                }
+                
+                if($("#HearAboutInput").val() === "Where did you hear about this event?") {
+                  $("#HearAboutInput").addClass('is-invalid'); 
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#HearAboutInput").removeClass('is-invalid'); 
+                  userData.hearAbout = $("#HearAboutInput").val(); 
+                }
+                
+                if(!$('input[type=checkbox]').prop('checked')) {
+                  $("#DisclaimerInput").addClass('is-invalid'); 
+                  $("#DisclaimerLabel").css("color", "#DC3545"); 
+                  $("#mandatoryModal").modal('show'); 
+                  return false; 
+                } else {
+                  $("#DisclaimerInput").removeClass('is-invalid'); 
+                }
+                
+                $("#register-btn").text("PLEASE WAIT..."); 
+                userData = JSON.stringify(userData);  
+                
+                $.ajax({
+                    url: "populateData.php", 
+                    type: "POST", 
+                    data: {"userData": userData}, 
+                    error: function(err) {
+                        console.error(err); 
+                    }, 
+                    success: function(data) {
+                            console.log("done"); 
+                            $("#data-screen").hide(); 
+                            $("#thankyou-screen").show(); 
+                    }
+                }); 
+            });         
+        </script>
+    </body>
+</html>
